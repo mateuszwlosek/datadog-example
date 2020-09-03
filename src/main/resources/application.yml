@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: datadog-example
+
+management:
+  metrics:
+    export:
+      datadog:
+        api-key: ${DATADOG_API_KEY}
+        application-key: ${DATADOG_APPLICATION_KEY}
+        host-tag: ${spring.application.name}
+        index: metrics
+        step: 15s
